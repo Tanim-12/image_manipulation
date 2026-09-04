@@ -110,6 +110,7 @@ Image* rotate(Image *img){
     return imgNew;
 }
 
+// Details in my notebook
 Image* crop(Image *img, int x, int y, int cropWidth, int cropHeight){
     Image *imgNew = malloc(sizeof(Image));
 
@@ -128,6 +129,7 @@ Image* crop(Image *img, int x, int y, int cropWidth, int cropHeight){
     return imgNew;
 }
 
+// Details in my notebook
 Image* blur(Image *img){
     Image *imgNew = malloc(sizeof(Image));
 
