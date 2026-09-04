@@ -1,0 +1,4 @@
+# Uncomment the following line to set the enviroment variables here
+#.tec_uname
+
+$TECMAKE_MAKE -f $TECMAKE_HOME/tecmake.mak $*

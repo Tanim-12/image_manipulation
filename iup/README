@@ -1,0 +1,15 @@
+README for Tecmake
+
+  Tecmake is essentially a general GNU makefile with a series of predefined 
+  targets and rules with the purpose of providing those in charge of developing 
+  libraries and applications the necessary tools so that versions for different 
+  platforms can be generated homogeneously. In other words, the tecmake user 
+  does not need to create a complete makefile nor be concerned with the current 
+  platform to create a library or application.
+
+  Installation instructions and usage are available in the Tecmake documentation.
+
+  For complete information, visit Tecmake's web site at http://www.tecgraf.puc-rio.br/tecmake
+  or access its documentation in the HTML folder.
+
+(end of README)

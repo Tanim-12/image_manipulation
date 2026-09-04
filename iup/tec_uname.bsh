@@ -1,0 +1,144 @@
+
+# ########################
+# Tecmake Configuration
+# ########################
+
+export TECTOOLS_HOME=/home/tecgraf
+export TECMAKE_HOME=/home/tecgraf/tecmake
+export TECMAKE_MAKE=make
+
+# ########################
+# System Identification
+# ########################
+
+# Base Definitions
+export TEC_SYSNAME=`uname -s`
+export TEC_SYSVERSION=`uname -r|cut -f1 -d.`
+export TEC_SYSMINOR=`uname -r|cut -f2 -d.`
+export TEC_SYSARCH=`uname -m`
+
+# Fixes
+case $TEC_SYSNAME in 
+SunOS)
+	export TEC_SYSARCH=`uname -p`;;
+IRIX)
+	export TEC_SYSARCH=`uname -p`;;
+FreeBSD)
+	export TEC_SYSMINOR=`uname -r|cut -f2 -d.|cut -f1 -d-`;;
+GNU/kFreeBSD)
+	export TEC_SYSNAME=kFreeBSD
+	export TEC_SYSMINOR=`uname -r|cut -f2 -d.|cut -f1 -d-`;;
+AIX)
+	export TEC_SYSVERSION=`uname -v`
+	export TEC_SYSMINOR=`uname -r`
+	export TEC_SYSARCH='ppc';;
+Darwin)
+	export TEC_SYSNAME='MacOS'
+	export TEC_SYSVERSION=`sw_vers -productVersion|cut -f1 -d.`
+	export TEC_SYSMINOR=`sw_vers -productVersion|cut -f2 -d.`
+	export TEC_SYSARCH=`uname -p`;;
+esac
+
+if [ $TEC_SYSARCH == i686 ]; then
+	export TEC_SYSARCH='x86'
+fi
+if [ $TEC_SYSARCH == i386 ]; then
+	export TEC_SYSARCH='x86'
+fi
+if [ $TEC_SYSARCH == powerpc ]; then
+	export TEC_SYSARCH='ppc'
+fi
+if [ $TEC_SYSARCH == x86_64 ]; then
+	export TEC_SYSARCH='x64'
+fi
+if [ $TEC_SYSARCH == amd64 ]; then
+	export TEC_SYSARCH='x64'
+fi
+
+# Compose
+export TEC_SYSRELEASE=$TEC_SYSVERSION.$TEC_SYSMINOR
+export TEC_UNAME=$TEC_SYSNAME$TEC_SYSVERSION$TEC_SYSMINOR
+
+# Linux 2.4 and GCC 3.x
+if [ $TEC_UNAME == Linux24 ]; then
+	GCCVER=`gcc -dumpversion|cut -f1 -d.`
+	if [ $GCCVER == 3 ]; then
+		export TEC_UNAME=$TEC_UNAME'g3'
+	fi
+	unset GCCVER
+fi
+
+# Linux 2.6 and GCC 4.x
+if [ $TEC_UNAME == Linux26 ]; then
+	GCCVER=`gcc -dumpversion|cut -f1 -d.`
+	if [ $GCCVER == 4 ]; then
+		export TEC_UNAME=$TEC_UNAME'g4'
+	fi
+	unset GCCVER
+fi
+
+if [ $TEC_SYSNAME == Linux ]; then
+  # Linux and PowerPC
+	if [ $TEC_SYSARCH == ppc ]; then
+		export TEC_UNAME=$TEC_UNAME'ppc'
+	fi
+
+  # 64-bits Linux
+  if [ $TEC_SYSARCH == x64 ]; then
+    export BUILD_64=Yes
+    export TEC_UNAME=$TEC_UNAME'_64'
+  fi
+
+  # Itanium Linux
+  if [ $TEC_SYSARCH == ia64 ]; then
+    export BUILD_64=Yes
+    export TEC_UNAME=$TEC_UNAME'_ia64'
+  fi
+    
+  # Linux Distribution
+  export TEC_DISTNAME=`lsb_release -is`
+  export TEC_DISTVERSION=`lsb_release -rs|cut -f1 -d.`
+  export TEC_DIST=$TEC_DISTNAME$TEC_DISTVERSION
+fi
+
+# 64-bits FreeBSD
+if [ $TEC_SYSNAME == FreeBSD ]; then
+  if [ $TEC_SYSARCH == x64 ]; then
+    export BUILD_64=Yes
+    export TEC_UNAME=$TEC_UNAME'_64'
+  fi
+fi
+
+# Solaris and Intel
+if [ $TEC_SYSNAME == SunOS ]; then
+	if [ $TEC_SYSARCH == x86 ]; then
+		export TEC_UNAME=$TEC_UNAME'x86'
+	fi
+fi
+
+# MacOS and Intel
+if [ $TEC_SYSNAME == MacOS ]; then
+	if [ $TEC_SYSMINOR -lt 6 ]; then
+		if [ $TEC_SYSARCH == x86 ]; then
+			export TEC_UNAME=$TEC_UNAME'x86'
+		fi
+	else
+		export TEC_SYSARCH='x64'
+	fi
+fi
+
+# #####################
+# Environment Variables
+# #####################
+
+for produto in im cd iup lua52 lua53 ; do
+	PROD=`echo $produto|tr \[a-z\] \[A-Z\]`
+	export $PROD=$TECTOOLS_HOME/$produto
+	unset PROD
+done
+
+export LUA51=$TECTOOLS_HOME/lua5.1
+#If the Lua executables are not in the above folder tree
+#export LUA_BIN=/usr/local/bin
+
+export CDDIR=$CD/etc

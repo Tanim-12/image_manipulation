@@ -5,9 +5,8 @@
 
 OUT="${1:-imageeditor}"
 
-IUP_INCLUDE=~/iup/iup/include
-IUP_LIB=~/iup/iup/lib/MacOS265
-
+IUP_INCLUDE=iup/iup/include
+IUP_LIB=iup/iup/lib/MacOS265
 SRCS="main.c gui.c image.c processing.c"
 
 for f in $SRCS; do

@@ -1,0 +1,15 @@
+#! /bin/bash   
+# Use this file to build for Windows, using mingw in UNIX.
+# Uncomment the following line to set the enviroment variables here
+#. tec_uname
+
+export MAKE_MODE=UNIX
+export TEC_UNAME=mingw3
+export TEC_SYSNAME=Win32
+
+export TECMAKE_HOME=/home/tecgraf/tecmake
+export TECMAKE_MAKE=make
+
+export MINGW3=/usr/i586-mingw32msvc
+
+$TECMAKE_MAKE -f $TECMAKE_HOME/tecmakewin.mak $*

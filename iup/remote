@@ -1,0 +1,22 @@
+#!/bin/csh
+
+# Parameters:
+# 1   ... startup folder
+# 2   ... makefile
+# 3-n ... definitions
+
+echo "Configuring Environment"
+echo "... TeCGraf"
+#source /home/t/tecgraf/bin/tecgraf_inst
+source /home/skel/.cshrc
+echo "... User"
+source /home/skel/.login
+cd $argv[1]
+echo ""; echo "Starting Tecmake:"
+if ( $#argv > 2 ) then
+  echo "parameters: $argv[3*]"
+endif
+echo ""
+tecmake $argv[2*]
+echo ""; echo "Press ENTER to close the window..."
+echo $< >/dev/null
