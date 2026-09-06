@@ -58,6 +58,53 @@ this version.
 5. Click **Undo** to reverse the latest operation.
 6. Click **Save** to save the edited image as a BMP file.
 
+## Screenshots
+
+Each screenshot below demonstrates the editor or one of its commands. The
+original screenshot filenames are preserved in the `screenshot/` folder.
+
+### Editor and Open
+
+![Initial editor window](screenshot/Screenshot%202026-09-06%20at%2010.09.56%E2%80%AFPM.png)
+
+![Open command](screenshot/Screenshot%202026-09-06%20at%2010.10.19%E2%80%AFPM.png)
+
+### Image Adjustments
+
+![Grayscale command](screenshot/Screenshot%202026-09-06%20at%2010.10.26%E2%80%AFPM.png)
+
+![Brightness command](screenshot/Screenshot%202026-09-06%20at%2010.10.33%E2%80%AFPM.png)
+
+![Rotate command](screenshot/Screenshot%202026-09-06%20at%2010.10.40%E2%80%AFPM.png)
+
+![Invert command](screenshot/Screenshot%202026-09-06%20at%2010.10.53%E2%80%AFPM.png)
+
+### Flip and Blur
+
+![Vertical flip command](screenshot/Screenshot%202026-09-06%20at%2010.11.01%E2%80%AFPM.png)
+
+![Blur command](screenshot/Screenshot%202026-09-06%20at%2010.11.08%E2%80%AFPM.png)
+
+![Horizontal flip command](screenshot/Screenshot%202026-09-06%20at%2010.11.19%E2%80%AFPM.png)
+
+The attached screenshots do not include separate examples for Save, Crop, or
+Undo.
+
+### Screenshot Files
+
+```text
+screenshot/
+├── Screenshot 2026-09-06 at 10.09.56 PM.png
+├── Screenshot 2026-09-06 at 10.10.19 PM.png
+├── Screenshot 2026-09-06 at 10.10.26 PM.png
+├── Screenshot 2026-09-06 at 10.10.33 PM.png
+├── Screenshot 2026-09-06 at 10.10.40 PM.png
+├── Screenshot 2026-09-06 at 10.10.53 PM.png
+├── Screenshot 2026-09-06 at 10.11.01 PM.png
+├── Screenshot 2026-09-06 at 10.11.08 PM.png
+└── Screenshot 2026-09-06 at 10.11.19 PM.png
+```
+
 ## Project Structure
 
 ```text
