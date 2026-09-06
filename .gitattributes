@@ -2,3 +2,4 @@ stb_image.h linguist-vendored
 stb_image_write.h linguist-vendored
 imageeditor linguist-generated
 imageeditor.exe linguist-generated
+iup/* linguist-vendored
