@@ -1,5 +1,9 @@
 # Image Editing Software
 
+Course: CSE1101L — Final Project 
+Name: Syed Tasnim Ferdus Tanim 
+Roll: BSSE 1819
+
 A simple C image editor created for the final lab project. The application uses
 the IUP GUI toolkit and works with BMP images.
 
@@ -60,50 +64,64 @@ this version.
 
 ## Screenshots
 
-Each screenshot below demonstrates the editor or one of its commands. The
-original screenshot filenames are preserved in the `screenshot/` folder.
+Each screenshot below shows the editor performing one specific operation.
+Files are stored in the `screenshots/` folder.
 
-### Editor and Open
+### Opening an image
 
-![Initial editor window](screenshot/Screenshot%202026-09-06%20at%2010.09.56%E2%80%AFPM.png)
+![Opening an image](screenshots/Opening%20an%20image.png)
 
-![Open command](screenshot/Screenshot%202026-09-06%20at%2010.10.19%E2%80%AFPM.png)
+### Opening Interphase
 
-### Image Adjustments
+![Opening Interphase](screenshots/Opening%20Interphase.png)
 
-![Grayscale command](screenshot/Screenshot%202026-09-06%20at%2010.10.26%E2%80%AFPM.png)
+### Grayscale
 
-![Brightness command](screenshot/Screenshot%202026-09-06%20at%2010.10.33%E2%80%AFPM.png)
+![Grayscale](screenshots/Grayscale.png)
 
-![Rotate command](screenshot/Screenshot%202026-09-06%20at%2010.10.40%E2%80%AFPM.png)
+### Brightness
 
-![Invert command](screenshot/Screenshot%202026-09-06%20at%2010.10.53%E2%80%AFPM.png)
+![Brightness](screenshots/Brightness.png)
 
-### Flip and Blur
+### Invert
 
-![Vertical flip command](screenshot/Screenshot%202026-09-06%20at%2010.11.01%E2%80%AFPM.png)
+![Invert](screenshots/Invert.png)
 
-![Blur command](screenshot/Screenshot%202026-09-06%20at%2010.11.08%E2%80%AFPM.png)
+### Horizontal Flip
 
-![Horizontal flip command](screenshot/Screenshot%202026-09-06%20at%2010.11.19%E2%80%AFPM.png)
+![Horizontal Flip](screenshots/Horizontal%20Flip.png)
 
-The attached screenshots do not include separate examples for Save, Crop, or
-Undo.
+### Vertical Flip
 
-### Screenshot Files
+![Vertical Flip](screenshots/Vertical%20Flip.png)
 
-```text
-screenshot/
-├── Screenshot 2026-09-06 at 10.09.56 PM.png
-├── Screenshot 2026-09-06 at 10.10.19 PM.png
-├── Screenshot 2026-09-06 at 10.10.26 PM.png
-├── Screenshot 2026-09-06 at 10.10.33 PM.png
-├── Screenshot 2026-09-06 at 10.10.40 PM.png
-├── Screenshot 2026-09-06 at 10.10.53 PM.png
-├── Screenshot 2026-09-06 at 10.11.01 PM.png
-├── Screenshot 2026-09-06 at 10.11.08 PM.png
-└── Screenshot 2026-09-06 at 10.11.19 PM.png
-```
+### Rotate
+
+![Rotate](screenshots/Rotate.png)
+
+### Blur
+
+![Blur](screenshots/Blur.png)
+
+### Crop
+
+![Crop](screenshots/Crop.png)
+
+### Crop error handling
+
+![Crop error handling](screenshots/Crop%20error%20handling.png)
+
+### Undo
+
+![Undo](screenshots/Undo.png)
+
+### Undo Handling
+
+![Undo Handling](screenshots/Undo%20Handling.png)
+
+### Saving image
+
+![Saving image](screenshots/Saving%20image.png)
 
 ## Project Structure
 
@@ -119,7 +137,7 @@ LAB FINAL PROJECT/
 ├── processing.h          # Image processing function declarations
 ├── stb_image.h           # Third-party image loading implementation
 ├── stb_image_write.h     # Third-party image writing implementation
-├── imageeditor            # Compiled executable
+├── imageeditor           # Compiled executable
 ├── tempCodeRunnerFile.c  # Temporary editor-generated C file
 └── README.md             # Project documentation
 ```
